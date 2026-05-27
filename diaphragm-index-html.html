@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c0c10" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Breathe" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <title>Diaphragmatic Breathing — 14-Day Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+
+    <div class="header" id="header">
+      <div class="header-label">Foundation Training</div>
+      <div class="header-title">Diaphragmatic Breathing</div>
+      <div class="header-sub">14-Day Plan &middot; 15 min/day &middot; Zero experience needed</div>
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span>Overall Progress</span>
+          <span id="progressCount">0 / 42 blocks</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+    </div>
+
+    <div class="week-tabs" id="weekTabs"></div>
+    <div class="day-dots" id="dayDots"></div>
+    <div class="content" id="content"></div>
+
+    <div class="nav-row">
+      <button class="nav-btn" id="prevBtn" onclick="navigate(-1)">&#8592; Prev</button>
+      <button class="nav-btn nav-btn-next" id="nextBtn" onclick="navigate(1)">Next &#8594;</button>
+    </div>
+
+  </div>
+
+  <div class="install-banner hidden" id="installBanner">
+    <span>📲</span>
+    <span>Add to Home Screen for app experience</span>
+    <span class="install-close" id="installClose">&#x2715;</span>
+  </div>
+
+  <!-- Day Complete Modal -->
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal" id="modal">
+      <div class="modal-emoji" id="modalEmoji">🎉</div>
+      <div class="modal-title" id="modalTitle">Day Complete!</div>
+      <div class="modal-msg" id="modalMsg"></div>
+      <button class="modal-btn" id="modalBtn" onclick="closeModal()">Keep Going →</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
